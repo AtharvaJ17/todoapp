@@ -16,4 +16,4 @@ RUN npx prisma generate
 
 EXPOSE 5003
 
-CMD ["sh", "-c", "npx prisma db execute --file prisma/migrations/20241121001602_init/migration.sql && node ./src/server.js"]
+CMD ["sh", "-c", "npx prisma migrate deploy && node ./src/server.js"]
